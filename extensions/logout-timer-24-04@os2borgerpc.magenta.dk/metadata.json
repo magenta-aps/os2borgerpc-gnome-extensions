@@ -1,0 +1,9 @@
+{
+  "name": "Logout Timer",
+  "description": "Countdown and log user out after n minutes.",
+  "uuid": "logout-timer-24-04@os2borgerpc.magenta.dk",
+  "version": 2.0,
+  "shell-version": [ "3.36", "42.5", "43", "46" ],
+  "gettext-domain": "LogoutTimer",
+  "url": "https://magenta.dk"
+}
