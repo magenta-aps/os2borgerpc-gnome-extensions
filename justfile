@@ -1,7 +1,7 @@
 #! /usr/bin/env -S just --justfile
 
 # Local / User specific install
-path := "/home/$USER/.local/share/gnome-shell/extensions/"
+path := "$HOME/.local/share/gnome-shell/extensions/"
 # Global install
 #path := "/usr/share/gnome-shell/extensions/"
 
@@ -18,8 +18,8 @@ list-extensions:
 
 # Install specific extension(s) by name
 install +EXTENSIONS: _create-the-dir-helper
-  for extension in {{EXTENSIONS}}; do \
-    ln --symbolic --force $extension {{path}} \
+  for extension in `find . -maxdepth 1 -mindepth 1 {{EXTENSIONS}}`; do \
+    ln --symbolic --force $(realpath $extension) {{path}} \
     gnome-extensions enable $extension; \
   done
 
@@ -27,7 +27,7 @@ install +EXTENSIONS: _create-the-dir-helper
 # Install all extensions in the extensions directory
 install-all: _create-the-dir-helper
   for extension in `find extensions/ -maxdepth 1 -mindepth 1`; do \
-    ln --symbolic --force $extension {{path}} \
+    ln --symbolic --force $(realpath $extension) {{path}} \
     gnome-extensions enable $extension; \
   done
 
