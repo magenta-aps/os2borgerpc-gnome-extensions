@@ -1,0 +1,19 @@
+{
+  "name": "No activities button",
+  "description": "Hide the activities button - credits to no_activities@yaya.cout",
+  "uuid": "no-activities@os2borgerpc.magenta.dk",
+  "version": 1,
+  "url": "https://magenta.dk",
+  "shell-version": [
+    "3.30",
+    "3.34",
+    "3.32",
+    "3.36",
+    "3.38",
+    "40",
+    "41",
+    "42",
+    "43",
+    "46"
+  ]
+}
