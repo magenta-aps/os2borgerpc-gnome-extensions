@@ -1,18 +1,21 @@
-const Main = imports.ui.main;
+import * as Main from 'resource:///org/gnome/shell/ui/main.js';
 
-let activities;
+import {Extension} from 'resource:///org/gnome/shell/extensions/extension.js';
 
-function init()
-{
-    activities = Main.panel.statusArea['activities'];
-}
+export default class NoActivitiesExtension extends Extension {
 
-function enable()
-{
-    activities.container.hide();
-}
+    constructor(metadata) {
+        super(metadata)
+        this._activities = Main.panel.statusArea['activities'];
+    }
 
-function disable()
-{
-    activities.container.show();
+    enable()
+    {
+        this._activities.container.hide();
+    }
+
+    disable()
+    {
+        this._activities.container.show();
+    }
 }
